@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "drivers": [
+    {"id": 101, "cat": "energy", "name": "PZEM-004T_V3", "type": "uart", "baud": 9600, "unit": "V,A,W,kWh"},
+    {"id": 102, "cat": "energy", "name": "INA219", "type": "i2c", "addr": "0x40", "unit": "V,mA,mW"},
+    {"id": 103, "cat": "energy", "name": "ACS712", "type": "adc", "unit": "A"},
+    {"id": 201, "cat": "env", "name": "DHT22", "type": "1wire", "unit": "C,pct"},
+    {"id": 202, "cat": "env", "name": "BME280", "type": "i2c", "addr": "0x76", "unit": "C,pct,hPa"},
+    {"id": 203, "cat": "env", "name": "DS18B20", "type": "1wire", "unit": "C"},
+    {"id": 204, "cat": "env", "name": "BH1750", "type": "i2c", "addr": "0x23", "unit": "lux"},
+    {"id": 205, "cat": "env", "name": "MH-Z19B", "type": "uart", "baud": 9600, "unit": "ppm"},
+    {"id": 301, "cat": "sec", "name": "PIR_HC_SR501", "type": "gpio_in", "unit": "bool"},
+    {"id": 302, "cat": "sec", "name": "LD2410_RADAR", "type": "uart", "baud": 256000, "unit": "bool,cm"},
+    {"id": 303, "cat": "sec", "name": "REED_SWITCH", "type": "gpio_in", "unit": "bool"},
+    {"id": 304, "cat": "sec", "name": "PUSH_BUTTON", "type": "gpio_in", "unit": "event"},
+    {"id": 401, "cat": "act", "name": "RELAY_1CH", "type": "gpio_out", "unit": "bool"},
+    {"id": 402, "cat": "act", "name": "SSR", "type": "gpio_out", "unit": "bool"},
+    {"id": 403, "cat": "act", "name": "MOSFET_PWM", "type": "pwm", "freq": 5000, "unit": "pct"},
+    {"id": 404, "cat": "act", "name": "SERVO_SG90", "type": "pwm", "freq": 50, "unit": "deg"},
+    {"id": 405, "cat": "act", "name": "BUZZER", "type": "pwm", "unit": "hz"},
+    {"id": 406, "cat": "act", "name": "WS2812B", "type": "rmt", "unit": "rgb"},
+    {"id": 501, "cat": "rtc", "name": "DS3231", "type": "i2c", "addr": "0x68", "unit": "epoch"}
+  ]
+}

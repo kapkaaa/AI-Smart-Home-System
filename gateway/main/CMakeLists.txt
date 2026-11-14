@@ -1,0 +1,20 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "gateway_hal.c"
+        "storage_mgr.c"
+        "ai_engine.c"
+        "blynk_bridge.c"
+        "external_protocols.c"
+    INCLUDE_DIRS 
+        "."
+        "../../common/include"
+        "../../storage_schema"
+    REQUIRES 
+        esp_wifi 
+        esp_now 
+        nvs_flash 
+        spiffs 
+        driver 
+        esp_timer
+)

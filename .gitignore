@@ -1,0 +1,35 @@
+# ESP-IDF Build Artifacts
+build/
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# Test Binaries & Logs
+*.exe
+*.out
+*.o
+*.a
+*.bin
+*.elf
+*.map
+*.dump
+*.log
+
+# Editor & IDE configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/

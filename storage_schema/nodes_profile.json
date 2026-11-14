@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "node_id": 1,
+      "mac": "24:DC:C3:9A:12:01",
+      "name": "Smart Breaker & Daya Utama",
+      "room": "Panel Listrik",
+      "chip": "ESP32-C3",
+      "role": 3,
+      "failsafe": 1,
+      "pins": [
+        {"pin": 4, "type": 2, "driver_id": 401, "label": "Main Relay 30A"},
+        {"pin": 6, "type": 7, "driver_id": 101, "label": "PZEM TX (to Node RX)"},
+        {"pin": 7, "type": 8, "driver_id": 101, "label": "PZEM RX (to Node TX)"}
+      ],
+      "reflex": {
+        "enabled": true,
+        "trigger_driver_id": 101,
+        "op": ">",
+        "threshold": 16.0,
+        "target_pin": 4,
+        "action_val": 0,
+        "description": "Overcurrent Protection: Putus relay jika arus > 16A dalam <100ms"
+      }
+    },
+    {
+      "node_id": 2,
+      "mac": "24:DC:C3:9A:12:02",
+      "name": "Klimat & Saklar Kamar",
+      "room": "Kamar Tidur Utama",
+      "chip": "ESP32-C6",
+      "role": 3,
+      "failsafe": 2,
+      "pins": [
+        {"pin": 2, "type": 1, "driver_id": 304, "label": "Wall Push Button"},
+        {"pin": 3, "type": 2, "driver_id": 401, "label": "Lampu Utama Relai"},
+        {"pin": 4, "type": 5, "driver_id": 202, "label": "BME280 SDA"},
+        {"pin": 5, "type": 6, "driver_id": 202, "label": "BME280 SCL"}
+      ],
+      "reflex": {
+        "enabled": true,
+        "trigger_driver_id": 304,
+        "op": "==",
+        "threshold": 1.0,
+        "target_pin": 3,
+        "action_val": 2,
+        "description": "Local Toggle: Tombol dinding langsung ubah status lampu tanpa internet"
+      }
+    }
+  ]
+}

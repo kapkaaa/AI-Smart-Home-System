@@ -1,0 +1,16 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "node_hal.c"
+        "edge_filter.c"
+        "local_reflex.c"
+    INCLUDE_DIRS 
+        "."
+        "../../common/include"
+    REQUIRES 
+        esp_wifi 
+        esp_now 
+        nvs_flash 
+        driver 
+        esp_adc
+)

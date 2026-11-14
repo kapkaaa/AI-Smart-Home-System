@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": 1,
+      "name": "Load Shedding Beban Puncak",
+      "enabled": true,
+      "trigger": {
+        "source_type": "node",
+        "source_id": 1,
+        "driver_id": 101,
+        "metric": "power_w",
+        "op": ">",
+        "threshold": 3500.0
+      },
+      "condition": {
+        "type": "none"
+      },
+      "action": {
+        "target_type": "node",
+        "target_id": 1,
+        "target_pin": 4,
+        "cmd": "SET_DIGITAL",
+        "value": 0
+      },
+      "cooldown_sec": 60
+    },
+    {
+      "id": 2,
+      "name": "Otomasi Suhu Kamar",
+      "enabled": true,
+      "trigger": {
+        "source_type": "node",
+        "source_id": 2,
+        "driver_id": 202,
+        "metric": "temp_c",
+        "op": ">",
+        "threshold": 28.5
+      },
+      "condition": {
+        "type": "time_window",
+        "start_hour": 12,
+        "end_hour": 18
+      },
+      "action": {
+        "target_type": "tuya_device",
+        "target_id": "tuya_ac_master",
+        "dps_key": "1",
+        "value": true
+      },
+      "cooldown_sec": 300
+    }
+  ]
+}
